@@ -1,11 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-<sql:query var="rs" dataSource="jdbc/spring">
-select id, name, email, text from offers
-</sql:query>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -14,22 +9,9 @@ select id, name, email, text from offers
 <title>Insert title here</title>
 </head>
 <body>
-	Hello World!!!
 
-	<%-- 	<p>Hello <%= session.getAttribute("name") %></p> --%>
-
-	<p>
-		Request : Hello
-		<%=request.getAttribute("name")%></p>
-
-	<p>
-		Request (Using JSTL) :
-
-		<c:out value="${name}"></c:out>
-	</p>
-
-	<c:forEach var="row" items="${rs.rows}">
-    ${row.id} : ${row.name}, ${row.email}, ${row.text}<br />
+	<c:forEach var="row" items="${offers}">
+    ${row.id}. ${row.name}, ${row.email}, ${row.text}<br />
 	</c:forEach>
 </body>
 </html>
