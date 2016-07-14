@@ -9,9 +9,11 @@
 <title>Home</title>
 </head>
 <body>
-
-	<p><a href="${pageContext.request.contextPath}/offers" >Show current offers</a> </p>
-	<p><a href="${pageContext.request.contextPath}/createoffer" >Add a new Offer</a> </p>
-
+	<%-- 	<c:if test="${created}"> --%>
+	<p>Offer Created.</p>
+	<%-- 	</c:if> --%>
+	<%-- 	<c:otherwise> --%>
+	<!-- 		<p>Error creating offer</p> -->
+	<%-- 	</c:otherwise> --%>
 </body>
 </html>

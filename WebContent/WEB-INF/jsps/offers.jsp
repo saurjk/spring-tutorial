@@ -6,12 +6,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Home</title>
+<title>Offers</title>
 </head>
 <body>
-
-	<p><a href="${pageContext.request.contextPath}/offers" >Show current offers</a> </p>
-	<p><a href="${pageContext.request.contextPath}/createoffer" >Add a new Offer</a> </p>
-
+	<c:forEach var="offer" items="${offers}">
+    	<p><c:out value = "${offer}"/></p>
+	</c:forEach>
 </body>
 </html>
